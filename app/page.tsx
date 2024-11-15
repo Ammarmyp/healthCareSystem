@@ -17,7 +17,7 @@ export default function Home() {
             />
           </Link>
           <PatientForm />
-          <div className="text-base mt-20 flex justify-between">
+          <div className="text-base mt-14 flex justify-between">
             <p className=" justify-items-end text-dark-600 xl:text-left">
               © {new Date().getFullYear()} PaamyCare
             </p>
