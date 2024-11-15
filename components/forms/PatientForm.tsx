@@ -72,7 +72,12 @@ const PatientForm = () => {
           placeholder="+2519****"
           fieldType={FormFieldTypes.PHONE_INPUT}
         />
-        <Button type="submit">Submit</Button>
+        <Button
+          type="submit"
+          className="w-full h-11 bg-green-500 hover:bg-green-500/60"
+        >
+          Submit
+        </Button>
       </form>
     </Form>
   );

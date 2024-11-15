@@ -1,18 +1,16 @@
-import React from "react";
+import { E164Number } from "libphonenumber-js/core";
+import Image from "next/image";
+import { Control } from "react-hook-form";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import {
+  FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormControl,
-  FormDescription,
   FormMessage,
 } from "./ui/form";
 import { Input } from "./ui/input";
-import { Control } from "react-hook-form";
-import Image from "next/image";
-import "react-phone-number-input/style.css";
-import { E164Number } from "libphonenumber-js/core";
-import PhoneInput, { Value } from "react-phone-number-input";
 
 export enum FormFieldTypes {
   INPUT = "input",
