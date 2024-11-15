@@ -87,7 +87,7 @@ const CustomFormField = (props: CustomProps) => {
             </FormLabel>
           )}
           <RenderItem field={field} props={props} />
-          <FormMessage className=" text-red-400" />
+          <FormMessage className=" text-red-400 text-xs" />
         </FormItem>
       )}
     />

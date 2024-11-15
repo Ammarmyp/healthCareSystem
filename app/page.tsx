@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex flex-row-reverse h-screen max-h-screen">
       <section className="remove-scrollbar container my-auto ">
-        <div className="max-w-[490px] mx-auto flex size-full flex-col py-10">
+        <div className="max-w-[490px] mx-auto flex size-full flex-col py-8">
           <Link href={"/"}>
             <Image
               src={"/assets/icons/logo.svg"}
