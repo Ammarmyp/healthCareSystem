@@ -12,7 +12,7 @@ export default function Home() {
             alt="logo"
             width={1000}
             height={1000}
-            className="h-8 w-fit"
+            className="h-8 w-fit mb-12"
           />
           <PatientForm />
           <div className="text-base mt-20 flex justify-between">
