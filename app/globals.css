@@ -84,3 +84,21 @@ body {
     background: transparent;
   }
 }
+
+@layer utilities {
+  .header {
+    @apply text-[32px] font-bold md:text-[36px] text-white tracking-tighter;
+  }
+}
+
+.PhoneInputInput {
+  outline: none;
+  margin-left: 4px;
+  background: #1a1d21;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.PhoneInputInput::placeholder {
+  color: #1a1d21;
+}

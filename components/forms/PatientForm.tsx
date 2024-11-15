@@ -18,9 +18,11 @@ import { Input } from "@/components/ui/input";
 import CustomFormField, { FormFieldTypes } from "../CustomFormField";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
+  fullname: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
+  email: z.string().min(2, { message: "email please" }),
+  phoneNumber: z.string().optional(),
 });
 
 const PatientForm = () => {
@@ -29,7 +31,9 @@ const PatientForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      fullname: "",
+      email: "",
+      phoneNumber: "",
     },
   });
 
@@ -41,7 +45,12 @@ const PatientForm = () => {
   }
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-4">
+        <section className="mb-10 space-y-4">
+          <h1 className="header">Hello there 👋</h1>
+          <p className="text-dark-700">Get started with appointments</p>
+        </section>
+
         <CustomFormField
           control={form.control}
           label="Full name"
