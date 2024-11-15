@@ -48,7 +48,6 @@ const RenderItem = ({ field, props }: { field: any; props: CustomProps }) => {
           <FormControl>
             <Input
               placeholder={props.placeholder}
-              control={field.control}
               {...field}
               className="border-0 bg-dark-400 text-white placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0  focus-visible:ring-offset-0 "
             />
