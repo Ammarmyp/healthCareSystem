@@ -10,6 +10,8 @@ import {
 import { Input } from "./ui/input";
 import { Control } from "react-hook-form";
 import Image from "next/image";
+import PhoneInput, { Value } from "react-phone-number-input";
+import { E164Number } from "libphonenumber-js/core";
 
 export enum FormFieldTypes {
   INPUT = "input",
@@ -53,7 +55,18 @@ const RenderItem = ({ field, props }: { field: any; props: CustomProps }) => {
       );
 
     case FormFieldTypes.PHONE_INPUT:
-      return <FormControl></FormControl>;
+      return (
+        <FormControl>
+          <PhoneInput
+            onChange={field.onChange}
+            defaultCountry="ET"
+            placeholder={props.placeholder}
+            addInternationalOption
+            value={field.value as E164Number | undefined}
+            className=" mt-2 h-11 rounded-md px-3 text-sm border-2 bg-dark-400 placeholder:text-dark-600 border-dark-500"
+          />
+        </FormControl>
+      );
 
     default:
       return null;
