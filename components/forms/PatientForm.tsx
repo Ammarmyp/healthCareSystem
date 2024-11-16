@@ -10,9 +10,11 @@ import { PatientFormSchema } from "@/lib/validation";
 import CustomFormField, { FormFieldTypes } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const PatientForm = () => {
   const [isLoading, setLoading] = useState(false);
+  const router = useRouter();
 
   // ...
   // 1. Define your form.
@@ -36,8 +38,14 @@ const PatientForm = () => {
         email: values.email,
         phoneNumber: values.phoneNumber,
       };
-    } catch (error) {}
-    console.log(values);
+
+      // const newUser = createUser(user);
+      // if(newUser) router.push( `patients/${newUser.id}/register`);
+    } catch (error) {
+      console.log(error);
+    }
+
+    setLoading(false);
   };
   return (
     <Form {...form}>
