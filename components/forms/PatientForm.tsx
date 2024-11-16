@@ -12,7 +12,7 @@ import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 
 const PatientForm = () => {
-  const [isLoading, setLoading] = useState();
+  const [isLoading, setLoading] = useState(false);
 
   // ...
   // 1. Define your form.
@@ -26,11 +26,19 @@ const PatientForm = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof PatientFormSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+  const onSubmit = async (values: z.infer<typeof PatientFormSchema>) => {
+    setLoading(true);
+    // ** Do something with the form values.
+    // ** ✅ This will be type-safe and validated.
+    try {
+      const user = {
+        name: values.fullname,
+        email: values.email,
+        phoneNumber: values.phoneNumber,
+      };
+    } catch (error) {}
     console.log(values);
-  }
+  };
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-3">
