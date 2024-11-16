@@ -8,8 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { PatientFormSchema } from "@/lib/validation";
 import CustomFormField, { FormFieldTypes } from "../CustomFormField";
+import SubmitButton from "../SubmitButton";
+import { useState } from "react";
 
 const PatientForm = () => {
+  const [isLoading, setLoading] = useState();
+
   // ...
   // 1. Define your form.
   const form = useForm<z.infer<typeof PatientFormSchema>>({
@@ -56,12 +60,7 @@ const PatientForm = () => {
           placeholder="+2519****"
           fieldType={FormFieldTypes.PHONE_INPUT}
         />
-        <Button
-          type="submit"
-          className="w-full h-11 bg-green-500 hover:bg-green-500/60"
-        >
-          Submit
-        </Button>
+        <SubmitButton isLoading={isLoading}>Get started</SubmitButton>
       </form>
     </Form>
   );
